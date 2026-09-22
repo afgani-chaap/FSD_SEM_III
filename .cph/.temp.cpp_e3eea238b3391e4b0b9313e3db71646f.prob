@@ -1,0 +1,1 @@
+{"name":"Local: temp","url":"c:\\Users\\UDDHAV\\OneDrive\\Desktop\\FSD SEM 3\\temp.cpp","tests":[{"id":1784369866547,"input":"8\n24\nR 35\nRL 30\nRLL 28\nRLR 34\nRLLL 25\nRLLR 29\nRLRL 33\n","output":"58"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\UDDHAV\\OneDrive\\Desktop\\FSD SEM 3\\temp.cpp","group":"local","local":true}

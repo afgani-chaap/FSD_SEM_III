@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>my first java script code</h2>
+    <button onclick="runCode()">Run Code</button>
+    <p id="result"></p>
+    <script>
+        function runCode(){
+            let number1= 10;
+            let number2= 5;
+            let sum= number1+number2;
+            document.getElementById("result").innerText ="sum is:" +sum;
+        }
+    </script>
+    <h2>data type example</h2>
+    <button onclick="runcode2()">RUN CODE</button>
+    <p id ="result2"></p>
+    <script>
+        function runcode2(){
+            let age =16;
+            let name="aman";
+            let isstudent=true;
+            document.getElementById("result2").innerText="age type:"+typeof age +" | " + "name type:"+typeof name +" | " +"isstudent type:"+typeof isstudent ;       }
+            
+    </script>
+    <h2>if else exmaple</h2>
+    <button onclick="runCode4()">RUN CODE 3</button>
+    <p id="result3"></p>
+        <script>
+            function runCode4(){
+                let marks = 75;
+                if(marks>=90){
+                    document.getElementById("result3").innerText ="Grade A";
+                }else if(marks>=60){
+                    document.getElementById("result3").innerText ="Grade B";
+                }else{
+                    document.getElementById("result3").innerText ="Grade C- needs improvement";
+                }
+            }
+            </script>
+            <h2>Array Example</h2>
+            <button onclick="runCode5()">RUN CODE 4</button>
+            <p id="result6"></p>
+            <script>
+                function runCode5(){
+                    let student=["aman","riya","karan"]
+                    let first =student[0];
+                    let total =student.length;
+                    student.push("sneha");
+                    document.getElementById("result6").innerText=
+                    "first:"+ first+" | "+
+                    "total:"+ total+" | "+
+                    "after add:"+ student;
+                }
+            </script>
+            <h2>key pair example</h2>
+            <button onclick="runCode7()">runcode</button>
+            <p id="result7"></p>
+            <script>
+                function runCode7(){
+                    let student={
+                        name:"aman",
+                        age:16,
+                        marks:85;
+                    };
+                    let studentname = student.name;
+                    let studentage = student["age"];
+                    student.marks = 90;
+                    document.getElementById("result7").innerText=
+                    "name:"+ studentname+" | "+
+                    "age:"+ studentage+" | "+
+                    "updated marks:" + student.marks;
+                }
+            </script>
+
+             <h2>DOM manuplitation</h2>
+             
+             <button onclick="runcode9()">Run Code</button>
+             <p id="demotext"></p>
+
+             <script>
+                function runcode9(){
+                    document.getElementById("demotext").innerText="Hello! javascript changed this text";
+
+                    document.getElementById("demotext").style.color="green";
+                }
+             </script>
+             
+             <h2>Template Literals Example</h2>
+            <button onclick="runCode8()">Run Code</button>    
+            <p id="result8"></p>    
+            <script>     
+            function runCode8() {
+                let name = "Riya";       
+                let marks = 88;         
+                let message = `Name: ${name}, Marks: ${marks}`;            
+                document.getElementById("result8").innerText = message;     
+                }   
+                </script>
+                 <h2>DOM Manipulation Example</h2>
+                <button onclick="runCode9()">Run Code</button>
+                <p id="demoText">This text will change when you click Run.</p>    
+                <script>     
+                function runCode9() {
+                    document.getElementById("demoText").innerText = "Hello! JavaScript changed this text.";
+                    document.getElementById("demoText").style.color = "green";    
+                 }   
+                 </script> 
+                  <h2>Events Example</h2>
+                  <button onclick="setupEvent()">Setup Event (run once)</button>    
+                  <button id="clickMeBtn">Click Me!</button>    
+                  <script>     function setupEvent() {
+                    document.getElementById("clickMeBtn").addEventListener("click", function() {         alert("You clicked the button!");       });     }   
+                    </script>
+                    <h2>Classes Example</h2>  
+                    <button onclick="runCode10()">Run Code</button>    
+                    <p id="result10"></p>    
+                    <script>     function runCode10() {
+                        class Student {
+                            constructor(name, marks) {
+                                this.name = name;           
+                                this.marks = marks;         
+                            }          // a method (function) inside the class         
+                             showResult() {
+                                return this.name + " scored " + this.marks;         
+                            }       
+                        }              
+                            let student1 = new Student("Karan", 78);              
+                            document.getElementById("result10").innerText = student1.showResult();     
+                        }   
+                            </script>  
+                            <button id="btn">click me</button>
+                            <p id="output">hello</p>
+                            <script>
+                                document.getElementById("btn").addEventListener("click", ()=>{
+                                    document.getElementById("output").textContent = "button was clicked!";
+                                });
+                            </script>
+                            <input type ="text" id ="nameinput" placeholder="enter ur name">
+                            <p id="greet"></p>
+                            <script>
+                                const input= document.getElementById("nameinput");
+                                const greet = document.getElementById("greet");
+                                input.addEventListener("input", () => {
+                                    greet.textContent = `hello , ${input,value}!`;
+                                });
+                            </script>
+                            <ul id ="tasklist">
+                                <li>task 1</li>
+                                <li>task 2</li>
+                            </ul>
+                            <script>
+                                document.getElementById("tasklist").addEventListener("click",(e) =>{
+                                    if(e.target.tagname ==="li"){
+                                        e.target.remove();
+                                    }
+                                });
+                            </script>
+<input type="text" id="taskInput" placeholder="Enter a task">
+<button id="addButton">Add</button>
+<ul id="taskList1"></ul>
+<script>
+    document.getElementById("addButton").addEventListener("click", () => {
+        const input = document.getElementById("taskInput");
+        if (input.value.trim() !== ""){
+            const li = document.createElement("li");
+            li.textContent = input.value;
+            document.getElementById("taskList1").appendChild(li);
+            input.value = "";
+        }
+    });
+</script>
+</body>
+</html>
